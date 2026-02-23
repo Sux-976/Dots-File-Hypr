@@ -1,0 +1,78 @@
+/* Definições Globais */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Lexend", "JetBrainsMono NFP", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+/* --- ESQUERDA (Launcher + Taskbar em pílula conjunta) --- */
+#custom-launcher {
+background-color: #1a1a1a;
+color: #b0b0b0;
+border: 1px solid #333333;
+border-right: none;
+border-radius: 20px 0 0 20px;
+padding: 0 10px 0 15px;
+}
+
+#taskbar {
+background-color: #1a1a1a;
+border: 1px solid #333333;
+border-left: none;
+border-radius: 0 20px 20px 0;
+padding: 0 10px 0 5px;
+}
+
+/* --- CENTRO (Workspaces) --- */
+#workspaces {
+background-color: #1a1a1a;
+border: 1px solid #333333;
+border-radius: 20px;
+padding: 0 10px;
+}
+
+#workspaces button {
+color: #555555;
+padding: 0 8px;
+}
+
+#workspaces button.active {
+color: #e0e0e0;
+}
+
+#workspaces button:hover {
+color: #ffffff;
+background: transparent;
+}
+
+/* --- DIREITA (Pílulas Individuais Separadas) --- */
+#network, #pulseaudio, #custom-notification, #clock, #custom-menu {
+background-color: #1a1a1a;
+color: #b0b0b0;
+border: 1px solid #333333;
+border-radius: 20px;
+padding: 0 15px;
+margin-left: 8px; /* Espaço entre as pílulas */
+}
+
+/* Destaque opcional para a Hora */
+#clock {
+color: #e0e0e0;
+}
+
+/* Efeito de Hover em todos os botões clicáveis */
+#custom-launcher:hover,
+#network:hover,
+#pulseaudio:hover,
+#custom-notification:hover,
+#clock:hover,
+#custom-menu:hover {
+background-color: #252525;
+color: #ffffff;
+}

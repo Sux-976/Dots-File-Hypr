@@ -1,0 +1,39 @@
+(defpoll time :interval "10s" "date '+%H:%M'")
+(defpoll net_name :interval "10s" "nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2 | grep . || echo 'Ethernet'")
+(defpoll volume_percent :interval "1s" "pamixer --get-volume")
+
+(defwindow control_center
+  :monitor 0
+  :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  :geometry (geometry :x "12px" :y "52px" :anchor "top right" :width "350px")
+  (main_box))
+
+(defwidget main_box []
+  (box :class "main-card" :orientation "v" :space-evenly false
+
+    ;; Pílulas Superiores
+    (box :class "header-row" :space-evenly true
+      (box :class "pill" :halign "start" :space-evenly false
+        (label :class "icon" :text "")
+        (label :class "text" :text net_name))
+      (box :class "pill" :halign "end"
+        (label :class "text" :text time)))
+
+    ;; Som ( pamixer )
+    (box :class "slider-section" :space-evenly false
+      (label :class "slider-icon" :text "󰕾")
+      (scale :class "volume-bar"
+             :value volume_percent
+             :min 0
+             :max 101
+             :onchange "pamixer --set-volume {}"
+             :hexpand true))
+
+    ;; Botões de Ação
+    (box :class "actions-row" :space-evenly true
+      (button :class "action-btn" :onclick "systemctl suspend" "󰒲")
+      (button :class "action-btn" :onclick "hyprctl dispatch exit" "󰍃")
+      (button :class "action-btn power" :onclick "poweroff" "󰐥"))
+  ))

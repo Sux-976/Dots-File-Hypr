@@ -1,0 +1,31 @@
+# Configuração Geral
+max-visible=5
+sort=-time
+layer=overlay
+anchor=top-right
+
+# Estética (Azul e Dark)
+background-color=#1a1b26
+text-color=#a9b1d6
+width=300
+height=110
+margin=10
+padding=15
+border-size=2
+border-color=#33ccff
+border-radius=10
+font=JetBrains Mono Nerd Font 10
+
+# Cores por Urgência
+[urgency=low]
+border-color=#444b6a
+
+[urgency=normal]
+border-color=#33ccff
+default-timeout=5000
+
+[urgency=high]
+border-color=#f7768e
+text-color=#f7768e
+default-timeout=0
+

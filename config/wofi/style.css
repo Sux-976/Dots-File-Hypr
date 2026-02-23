@@ -1,0 +1,71 @@
+/* RESET E FONTE */
+* {
+    all: unset;
+    font-family: 'Lexend', 'CodeNewRoman Nerd Font Mono', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+/* MATAR OS CANTOS PRETOS:
+ *  A window fica transparente, o design fica no outer-box */
+window {
+    background-color: transparent;
+}
+
+#outer-box {
+margin: 10px;
+background-color: #121212; /* Stealth Gray Fundo */
+border: 1px solid #333333; /* Borda da Waybar/Eww */
+border-radius: 20px;
+}
+
+/* CAIXA DE BUSCA (Estilo Pílula) */
+#input {
+margin: 20px;
+padding: 12px 20px;
+border: 1px solid #333333;
+border-radius: 12px;
+color: #e0e0e0;
+background-color: #1a1a1a;
+}
+
+/* Ícone de busca dentro do input */
+#input image {
+color: #b0b0b0;
+padding-right: 10px;
+}
+
+/* LISTA DE RESULTADOS */
+#scroll {
+margin: 0 10px 10px 10px;
+}
+
+#inner-box {
+padding: 5px;
+}
+
+#entry {
+padding: 12px;
+margin: 2px 5px;
+border-radius: 12px;
+color: #b0b0b0;
+}
+
+/* SELEÇÃO (Igual ao seu Menu/Waybar) */
+#entry:selected {
+background-color: #252525;
+}
+
+#entry:selected #text {
+color: #ffffff;
+}
+
+/* ÍCONES DOS APPS */
+#img {
+margin-right: 15px;
+}
+
+/* Esconder setas e elementos extras */
+#entry arrow {
+color: transparent;
+}
